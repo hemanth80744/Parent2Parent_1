@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:5035'
+  apiUrl: 'https://hemanth80744-001-site1.anytempurl.com'
 };

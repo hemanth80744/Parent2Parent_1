@@ -14,9 +14,15 @@ Here, users can get genuine and real information about the school from experienc
 
 - **[Parent2Parent](./Parent2Parent)**: The backend API built with .NET 8.0 and C#. It handles user authentication, connection requests, and messaging.
 - **[parent2parent-ui](./parent2parent-ui)**: The frontend application built with Angular 18. It provides a modern and responsive user interface for parents.
-- **Database**: Azure SQL Database.
+- **Database**: Microsoft SQL Server (MSSQL).
 
 ## 🔧 Configuration
+
+### Backend (SmarterASP.NET)
+- **Hosting**: .NET 8.0 Runtime
+- **Database**: MSSQL Server
+- **Live API Link**: [https://hemanth80744-001-site1.anytempurl.com](https://hemanth80744-001-site1.anytempurl.com)
+- **Connection String**: Configured in `appsettings.json`.
 
 ### Frontend (Vercel)
 - **Root Directory**: `parent2parent-ui`

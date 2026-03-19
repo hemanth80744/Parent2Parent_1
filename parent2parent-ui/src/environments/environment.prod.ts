@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://parent2parent-api.azurewebsites.net'
+  apiUrl: 'https://hemanth80744-001-site1.anytempurl.com'
 };

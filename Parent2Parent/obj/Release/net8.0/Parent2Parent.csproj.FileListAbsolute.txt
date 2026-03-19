@@ -71,3 +71,4 @@ C:\Users\mutya\Documents\parent2parent\Parent2Parent\obj\Release\net8.0\refint\P
 C:\Users\mutya\Documents\parent2parent\Parent2Parent\obj\Release\net8.0\Parent2Parent.pdb
 C:\Users\mutya\Documents\parent2parent\Parent2Parent\obj\Release\net8.0\Parent2Parent.genruntimeconfig.cache
 C:\Users\mutya\Documents\parent2parent\Parent2Parent\obj\Release\net8.0\ref\Parent2Parent.dll
+C:\Users\mutya\Documents\parent2parent\Parent2Parent\obj\Release\net8.0\Parent2Parent.sourcelink.json

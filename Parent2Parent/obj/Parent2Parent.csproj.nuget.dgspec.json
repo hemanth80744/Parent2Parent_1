@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mutya\\Documents\\parent2parent\\parent2parent\\Parent2Parent.csproj": {}
+    "C:\\Users\\mutya\\Documents\\parent2parent\\Parent2Parent\\Parent2Parent.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mutya\\Documents\\parent2parent\\parent2parent\\Parent2Parent.csproj": {
+    "C:\\Users\\mutya\\Documents\\parent2parent\\Parent2Parent\\Parent2Parent.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mutya\\Documents\\parent2parent\\parent2parent\\Parent2Parent.csproj",
+        "projectUniqueName": "C:\\Users\\mutya\\Documents\\parent2parent\\Parent2Parent\\Parent2Parent.csproj",
         "projectName": "Parent2Parent",
-        "projectPath": "C:\\Users\\mutya\\Documents\\parent2parent\\parent2parent\\Parent2Parent.csproj",
+        "projectPath": "C:\\Users\\mutya\\Documents\\parent2parent\\Parent2Parent\\Parent2Parent.csproj",
         "packagesPath": "C:\\Users\\mutya\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mutya\\Documents\\parent2parent\\parent2parent\\obj\\",
+        "outputPath": "C:\\Users\\mutya\\Documents\\parent2parent\\Parent2Parent\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mutya\\AppData\\Roaming\\NuGet\\NuGet.Config"
