@@ -35,20 +35,11 @@ builder.Services.AddCors(options =>
 
     options.AddPolicy("Production", p =>
     {
-        if (allowedOrigins.Length > 0)
-        {
-            p.WithOrigins(allowedOrigins)
-             .AllowAnyHeader()
-             .AllowAnyMethod();
-        }
-        else
-        {
-            // Fallback for troubleshooting: allow all if none configured
-            // WARNING: Use with caution in real production
-            p.AllowAnyOrigin()
-             .AllowAnyHeader()
-             .AllowAnyMethod();
-        }
+        // For troubleshooting, we allow everything. 
+        // We will restrict this later once we confirm connectivity.
+        p.AllowAnyOrigin()
+         .AllowAnyHeader()
+         .AllowAnyMethod();
     });
 });
 
