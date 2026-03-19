@@ -8,9 +8,9 @@ Here, users can get genuine and real information about the school from experienc
 
 ## 🚀 Live Links
 
-- **Frontend (UI)**: [https://parent2-parent-1.vercel.app](https://parent2-parent-1.vercel.app)
-- **Backend (API)**: [https://parent2parent-1.onrender.com](https://parent2parent-1.onrender.com)
-- **API Documentation**: [https://parent2parent-1.onrender.com/swagger](https://parent2parent-1.onrender.com/swagger)
+- **Frontend (UI)**: [https://parent2parent-ui.azurewebsites.net](https://parent2parent-ui.azurewebsites.net)
+- **Backend (API)**: [https://parent2parent-api.azurewebsites.net](https://parent2parent-api.azurewebsites.net)
+- **API Documentation**: [https://parent2parent-api.azurewebsites.net/swagger](https://parent2parent-api.azurewebsites.net/swagger)
 
 ## Website Video Demo
 
@@ -20,17 +20,16 @@ Here, users can get genuine and real information about the school from experienc
 
 - **[Parent2Parent](./Parent2Parent)**: The backend API built with .NET 8.0 and C#. It handles user authentication, connection requests, and messaging.
 - **[parent2parent-ui](./parent2parent-ui)**: The frontend application built with Angular 18. It provides a modern and responsive user interface for parents.
-- **Database**: Microsoft SQL Server (MSSQL).
+- **Database**: Azure SQL Database.
 
-## 🔧 Configuration
+## 🔧 Configuration (Azure)
 
-### Backend (Render)
-Required Environment Variables:
-- `ConnectionStrings__Parent2ParentDb`: Your SQL Server connection string
-- `AllowedOrigins`: `["https://parent2-parent-1.vercel.app"]`
-- `ASPNETCORE_HTTP_PORTS`: `8080`
+### Backend (Azure App Service)
+Required Configuration -> Connection Strings:
+- `Parent2ParentDb`: Your Azure SQL connection string.
+- `AllowedOrigins`: `["https://parent2parent-ui.azurewebsites.net"]`
 
-### Frontend (Vercel)
+### Frontend (Azure App Service or Static Web App)
 - **Root Directory**: `parent2parent-ui`
 - **Output Directory**: `dist/browser`
 
