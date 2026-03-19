@@ -16,9 +16,9 @@ Here, users can get genuine and real information about the school from experienc
 - **[parent2parent-ui](./parent2parent-ui)**: The frontend application built with Angular 18. It provides a modern and responsive user interface for parents.
 - **Database**: Azure SQL Database.
 
-## 🔧 Configuration (Azure)
+## 🔧 Configuration
 
-### Frontend (Azure App Service or Static Web App)
+### Frontend (Vercel)
 - **Root Directory**: `parent2parent-ui`
 - **Output Directory**: `dist/browser`
 
