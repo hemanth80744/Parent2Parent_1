@@ -17,6 +17,7 @@ public sealed class DbHelper : IDbHelper
 
     public async Task<int> ExecuteNonQueryAsync(string storedProcedure, IEnumerable<SqlParameter>? parameters = null, CancellationToken ct = default)
     {
+        _logger.LogInformation("Executing non-query stored procedure: {StoredProcedure}", storedProcedure);
         await using var conn = new SqlConnection(_connectionString);
         await using var cmd = CreateCommand(conn, storedProcedure, parameters);
 
@@ -26,6 +27,7 @@ public sealed class DbHelper : IDbHelper
 
     public async Task<T?> ExecuteScalarAsync<T>(string storedProcedure, IEnumerable<SqlParameter>? parameters = null, CancellationToken ct = default)
     {
+        _logger.LogInformation("Executing scalar stored procedure: {StoredProcedure}", storedProcedure);
         await using var conn = new SqlConnection(_connectionString);
         await using var cmd = CreateCommand(conn, storedProcedure, parameters);
 
@@ -42,6 +44,7 @@ public sealed class DbHelper : IDbHelper
         IEnumerable<SqlParameter>? parameters = null,
         CancellationToken ct = default)
     {
+        _logger.LogInformation("Executing query stored procedure: {StoredProcedure}", storedProcedure);
         await using var conn = new SqlConnection(_connectionString);
         await using var cmd = CreateCommand(conn, storedProcedure, parameters);
 
@@ -75,6 +78,7 @@ public sealed class DbHelper : IDbHelper
         var cmd = conn.CreateCommand();
         cmd.CommandType = CommandType.StoredProcedure;
         cmd.CommandText = storedProcedure;
+        cmd.CommandTimeout = 30; // 30 seconds timeout
 
         if (parameters is not null)
         {

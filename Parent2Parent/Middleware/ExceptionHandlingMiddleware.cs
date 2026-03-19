@@ -28,7 +28,8 @@ public sealed class ExceptionHandlingMiddleware
         catch (SqlException ex)
         {
             _logger.LogError(ex, "SQL error while processing request.");
-            await WriteProblemDetailsAsync(context, HttpStatusCode.InternalServerError, "Database error", "A database error occurred.");
+            string detail = ex.Number == -2 ? "The database operation timed out." : "A database error occurred.";
+            await WriteProblemDetailsAsync(context, HttpStatusCode.InternalServerError, "Database error", detail);
         }
         catch (Exception ex)
         {
