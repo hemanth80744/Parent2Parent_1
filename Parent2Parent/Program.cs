@@ -15,11 +15,41 @@ builder.Services.AddCors(options =>
          .AllowAnyMethod());
 
     // For production, allow origins from configuration.
-    var allowedOrigins = builder.Configuration.GetSection("AllowedOrigins").Get<string[]>() ?? [];
+    var originsConfig = builder.Configuration["AllowedOrigins"];
+    string[] allowedOrigins;
+    
+    if (string.IsNullOrEmpty(originsConfig))
+    {
+        allowedOrigins = [];
+    }
+    else if (originsConfig.StartsWith("[") && originsConfig.EndsWith("]"))
+    {
+        // Try parsing as JSON array if it looks like one
+        allowedOrigins = System.Text.Json.JsonSerializer.Deserialize<string[]>(originsConfig) ?? [];
+    }
+    else
+    {
+        // Otherwise treat as comma-separated string
+        allowedOrigins = originsConfig.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+    }
+
     options.AddPolicy("Production", p =>
-        p.WithOrigins(allowedOrigins)
-         .AllowAnyHeader()
-         .AllowAnyMethod());
+    {
+        if (allowedOrigins.Length > 0)
+        {
+            p.WithOrigins(allowedOrigins)
+             .AllowAnyHeader()
+             .AllowAnyMethod();
+        }
+        else
+        {
+            // Fallback for troubleshooting: allow all if none configured
+            // WARNING: Use with caution in real production
+            p.AllowAnyOrigin()
+             .AllowAnyHeader()
+             .AllowAnyMethod();
+        }
+    });
 });
 
 builder.Services.AddSingleton<Parent2Parent.Data.IDbHelper, Parent2Parent.Data.DbHelper>();
