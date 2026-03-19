@@ -1,0 +1,85 @@
+<section class="auth">
+  <div class="container">
+    <div class="auth-grid">
+      <div class="copy fade-in">
+        <div class="copy-card card">
+          <div class="copy-badge">Create your account</div>
+          <h1>Join Parent2Parent</h1>
+          <p>
+            Connect with parents who’ve been there. Search schools, send requests, and chat once accepted.
+          </p>
+          <div class="copy-points">
+            <div class="pt"><span class="pt-dot"></span> Fast school search</div>
+            <div class="pt"><span class="pt-dot"></span> Requests-first safety</div>
+            <div class="pt"><span class="pt-dot"></span> Clean chat experience</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card auth-card fade-in">
+        <div class="head">
+          <div class="title">Create Account</div>
+          <div class="sub">It takes less than a minute.</div>
+        </div>
+
+        <form class="form" [formGroup]="form" (ngSubmit)="submit()">
+          <div class="row">
+            <label class="label" for="name">Name</label>
+            <input id="name" class="input" type="text" placeholder="Your full name" formControlName="name" />
+            @if(form.controls.name.touched && form.controls.name.invalid){
+              <div class="error">Name is required.</div>
+            }
+          </div>
+
+          <div class="row">
+            <label class="label" for="username">Username</label>
+            <input id="username" class="input" type="text" placeholder="Choose a username" formControlName="username" />
+            @if(form.controls.username.touched && form.controls.username.invalid){
+              <div class="error">Username is required.</div>
+            }
+          </div>
+
+          <div class="row">
+            <label class="label" for="password">Password</label>
+            <input id="password" class="input" type="password" placeholder="Minimum 4 characters" formControlName="password" />
+            @if(form.controls.password.touched && form.controls.password.invalid){
+              <div class="error">Password must be at least 4 characters.</div>
+            }
+          </div>
+
+          <div class="two">
+            <div class="row">
+              <label class="label" for="school">Current School Name</label>
+              <input id="school" class="input" type="text" placeholder="ABC Public School" formControlName="school" />
+              @if(form.controls.school.touched && form.controls.school.invalid){
+                <div class="error">School name is required.</div>
+              }
+            </div>
+
+            <div class="row">
+              <label class="label" for="class">Child Class</label>
+              <input id="class" class="input" type="text" placeholder="Class 5" formControlName="class" />
+              @if(form.controls.class.touched && form.controls.class.invalid){
+                <div class="error">Child class is required.</div>
+              }
+            </div>
+          </div>
+
+          <button class="btn btn-primary btn-block" type="submit" [disabled]="submitting()">
+            @if(submitting()){ <span>Creating...</span> } @else { <span>Create Account</span> }
+          </button>
+
+          @if(error()){
+            <div class="error">{{ error() }}</div>
+          }
+
+          <div class="foot">
+            Already have an account?
+            <a routerLink="/login" class="link">Login</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+

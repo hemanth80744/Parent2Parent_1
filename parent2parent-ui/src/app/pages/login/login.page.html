@@ -1,0 +1,44 @@
+<section class="auth">
+  <div class="container">
+    <div class="wrap fade-in">
+      <div class="card auth-card">
+        <div class="head">
+          <div class="title">Login to Parent2Parent</div>
+          <div class="sub">Welcome back. Continue where you left off.</div>
+        </div>
+
+        <form class="form" [formGroup]="form" (ngSubmit)="submit()">
+          <div class="row">
+            <label class="label" for="username">Username</label>
+            <input id="username" class="input" type="text" placeholder="Enter your username" formControlName="username" />
+            @if(form.controls.username.touched && form.controls.username.invalid){
+              <div class="error">Username is required.</div>
+            }
+          </div>
+
+          <div class="row">
+            <label class="label" for="password">Password</label>
+            <input id="password" class="input" type="password" placeholder="Enter your password" formControlName="password" />
+            @if(form.controls.password.touched && form.controls.password.invalid){
+              <div class="error">Password is required.</div>
+            }
+          </div>
+
+          @if(authError()){
+            <div class="error">{{ authError() }}</div>
+          }
+
+          <button class="btn btn-primary btn-block" type="submit" [disabled]="submitting()">
+            @if(submitting()){ <span>Logging in...</span> } @else { <span>Login</span> }
+          </button>
+
+          <div class="foot">
+            Don’t have an account?
+            <a routerLink="/register" class="link">Register</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+

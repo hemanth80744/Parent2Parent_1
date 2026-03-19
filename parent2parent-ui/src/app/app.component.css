@@ -1,0 +1,6 @@
+/* Shell spacing under sticky navbar */
+.app-shell{
+  min-height: calc(100vh - 72px);
+  padding-top: 72px;
+}
+

@@ -1,0 +1,27 @@
+<div class="chat card">
+  <div class="chat-head">
+    <div class="who">
+      <div class="avatar" aria-hidden="true">{{ otherName().slice(0,1) }}</div>
+      <div>
+        <div class="name">Chat with {{ otherName() }}</div>
+        <div class="sub">Demo conversation</div>
+      </div>
+    </div>
+    <span class="pill">Online</span>
+  </div>
+
+  <div class="chat-body" #scroller>
+    @for(m of messages(); track trackById($index, m)){
+      <div class="msg" [class.me]="m.senderId === meId()">
+        <div class="bubble">{{ m.message }}</div>
+        <div class="time">{{ m.sentAt | date:'shortTime' }}</div>
+      </div>
+    }
+  </div>
+
+  <div class="chat-input">
+    <input class="input" type="text" [(ngModel)]="draft" (keyup.enter)="onSend()" placeholder="Type a message..." />
+    <button class="btn btn-primary" (click)="onSend()">Send</button>
+  </div>
+</div>
+

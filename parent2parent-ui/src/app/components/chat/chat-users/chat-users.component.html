@@ -1,0 +1,19 @@
+<div class="users card">
+  <div class="users-head">
+    <div class="title">Connected</div>
+    <div class="sub">Choose someone to chat</div>
+  </div>
+
+  <div class="users-list">
+    @for(u of users(); track u.id){
+      <button class="row" [class.active]="u.id === selectedId()" (click)="select(u.id)">
+        <div class="avatar" aria-hidden="true">{{ u.name.slice(0,1) }}</div>
+        <div class="meta">
+          <div class="name">{{ u.name }}</div>
+          <div class="hint">{{ u.childClass }} · {{ u.currentSchoolName }}</div>
+        </div>
+      </button>
+    }
+  </div>
+</div>
+

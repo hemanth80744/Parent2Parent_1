@@ -1,0 +1,104 @@
+<section class="dash">
+  <div class="container dash-grid">
+    <app-sidebar title="Requests" />
+
+    <div class="main">
+      <div class="head card">
+        <div class="head-top">
+          <div>
+            <div class="title">Incoming Requests</div>
+            <div class="sub">Parents wanting to connect with you.</div>
+          </div>
+          <div class="pill">{{ incoming().length }}</div>
+        </div>
+      </div>
+
+      @if(incoming().length === 0){
+        <app-empty-state
+          title="No incoming requests"
+          subtitle="When parents send you a request, it will appear here."
+          icon="📥"
+        />
+      } @else {
+        <div class="grid">
+          @for(r of incoming(); track r.requestId){
+            <article class="req card">
+              <div class="req-left">
+                <div class="avatar" aria-hidden="true">{{ (r.senderName || 'P').slice(0,1) }}</div>
+                <div>
+                  <div class="name">{{ r.senderName }}</div>
+                  <div class="meta">Wants to connect</div>
+                </div>
+              </div>
+
+              <div class="req-right">
+                <span class="pill"
+                  [class.pending]="r.status.toLowerCase() === 'pending'"
+                  [class.accepted]="r.status.toLowerCase() === 'accepted'"
+                  [class.rejected]="r.status.toLowerCase() === 'rejected'">
+                  {{ r.status }}
+                </span>
+
+                <div class="actions">
+                  <button class="btn btn-success btn-sm" (click)="accept(r.requestId)" [disabled]="r.status.toLowerCase() !== 'pending'">Accept</button>
+                  <button class="btn btn-danger btn-sm" (click)="reject(r.requestId)" [disabled]="r.status.toLowerCase() !== 'pending'">Reject</button>
+                </div>
+              </div>
+            </article>
+          }
+        </div>
+      }
+
+      <div class="head card mt-4">
+        <div class="head-top">
+          <div>
+            <div class="title">Sent Requests</div>
+            <div class="sub">Parents you've reached out to.</div>
+          </div>
+          <div class="pill">{{ outgoing().length }}</div>
+        </div>
+      </div>
+
+      @if(outgoing().length === 0){
+        <app-empty-state
+          title="No sent requests"
+          subtitle="Search for parents by school to send requests."
+          icon="📤"
+        />
+      } @else {
+        <div class="grid">
+          @for(r of outgoing(); track r.requestId){
+            <article class="req card">
+              <div class="req-left">
+                <div class="avatar" aria-hidden="true">{{ (r.receiverName || 'P').slice(0,1) }}</div>
+                <div>
+                  <div class="name">{{ r.receiverName || 'Parent (ID: ' + r.receiverId + ')' }}</div>
+                  <div class="meta">Your request</div>
+                </div>
+              </div>
+
+              <div class="req-right">
+                <span class="pill"
+                  [class.pending]="r.status.toLowerCase() === 'pending'"
+                  [class.accepted]="r.status.toLowerCase() === 'accepted'"
+                  [class.rejected]="r.status.toLowerCase() === 'rejected'">
+                  {{ r.status }}
+                </span>
+                <div class="status-msg">
+                  @if(r.status.toLowerCase() === 'accepted'){
+                    <span class="text-success small">Request Accepted!</span>
+                  } @else if(r.status.toLowerCase() === 'rejected'){
+                    <span class="text-danger small">Request Rejected</span>
+                  } @else {
+                    <span class="text-muted small">Awaiting response</span>
+                  }
+                </div>
+              </div>
+            </article>
+          }
+        </div>
+      }
+    </div>
+  </div>
+</section>
+

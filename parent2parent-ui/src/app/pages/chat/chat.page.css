@@ -1,0 +1,46 @@
+.dash{
+  padding: 22px 0 60px 0;
+}
+.dash-grid{
+  display:grid;
+  grid-template-columns: 280px 1fr;
+  gap: 18px;
+  align-items:start;
+}
+.main{
+  display:grid;
+  gap: 16px;
+}
+.head{ padding: 16px; }
+.head-top{
+  display:flex;
+  justify-content: space-between;
+  align-items:flex-start;
+  gap: 14px;
+}
+.title{
+  font-weight: 900;
+  letter-spacing: .2px;
+  font-size: 18px;
+}
+.sub{
+  margin-top: 6px;
+  color: rgba(255,255,255,.62);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.chat-grid{
+  height: min(68vh, 680px);
+  display:grid;
+  grid-template-columns: 360px 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 720px){
+  .dash-grid{ grid-template-columns: 1fr; }
+  app-sidebar{ display:none; }
+  .chat-grid{ grid-template-columns: 1fr; height: auto; }
+  .chat-grid > *{ min-height: 420px; }
+}
+

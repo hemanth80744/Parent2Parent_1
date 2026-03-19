@@ -1,0 +1,29 @@
+<article class="p-card card">
+  <div class="top">
+    <div class="avatar" aria-hidden="true">
+      <span>{{ parent().name.split(' ')[0].slice(0,1) }}</span>
+    </div>
+    <div class="meta">
+      <div class="name">{{ parent().name }}</div>
+      <div class="sub">{{ parent().childClass }} · {{ parent().currentSchoolName }}</div>
+    </div>
+    <div class="grow"></div>
+    @if(requestState() === 'sent'){
+      <button class="btn btn-ghost btn-sm" disabled>Request Sent</button>
+    } @else {
+      <button class="btn btn-primary btn-sm" (click)="send()">Send Request</button>
+    }
+  </div>
+
+  <div class="chips">
+    <span class="chip">
+      <span class="chip-dot dotA"></span>
+      Child: {{ parent().childClass }}
+    </span>
+    <span class="chip">
+      <span class="chip-dot dotB"></span>
+      School: {{ parent().currentSchoolName }}
+    </span>
+  </div>
+</article>
+

@@ -1,0 +1,41 @@
+.auth{
+  padding: 44px 0 70px 0;
+}
+.wrap{
+  display:grid;
+  place-items:center;
+}
+.auth-card{
+  width: min(520px, 100%);
+  padding: 18px;
+}
+.head{
+  padding: 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(15,23,42,.10);
+  background: rgba(15,23,42,.03);
+  margin-bottom: 12px;
+}
+.title{
+  font-weight: 900;
+  letter-spacing: .2px;
+}
+.sub{
+  margin-top: 4px;
+  color: rgba(15,23,42,.55);
+  font-size: 12px;
+}
+.form{ display:grid; gap: 12px; }
+.row{ display:grid; }
+.foot{
+  margin-top: 10px;
+  color: rgba(15,23,42,.55);
+  font-size: 13px;
+  text-align:center;
+}
+.foot .link{
+  margin-left: 6px;
+  color: rgba(47,107,255,.95);
+  font-weight: 750;
+}
+

@@ -1,0 +1,64 @@
+<section class="dash">
+  <div class="container dash-grid">
+    <app-sidebar title="Dashboard" />
+
+    <div class="main">
+      <div class="head card">
+        <div class="head-top">
+          <div>
+            <div class="title">Search School</div>
+            <div class="sub">Find parents connected to the school you’re considering.</div>
+          </div>
+          <div class="pill">Demo results</div>
+        </div>
+
+        <div class="searchbar">
+          <input
+            class="input"
+            type="text"
+            [ngModel]="query()"
+            (ngModelChange)="query.set($event)"
+            placeholder="Type a school name… e.g. ABC"
+            (keyup.enter)="search()"
+          />
+          <button class="btn btn-primary" (click)="search()">
+            @if(searching()){ <span>Searching…</span> } @else { <span>Search</span> }
+          </button>
+        </div>
+        <div class="hint">Tip: Try “ABC”, “Green”, or “Sunrise”.</div>
+      </div>
+
+      <div class="list">
+        @if(error()){
+          <div class="error">{{ error() }}</div>
+        }
+        @if(searching()){
+          <div class="grid">
+            <div class="skeleton" style="height: 110px;"></div>
+            <div class="skeleton" style="height: 110px;"></div>
+            <div class="skeleton" style="height: 110px;"></div>
+          </div>
+        } @else {
+          @if(results().length === 0){
+            <app-empty-state
+              [title]="searchedOnce() ? 'No parents found' : 'Search a school'"
+              [subtitle]="searchedOnce() ? 'Try a different school name or spelling.' : 'Type a school name to see parents whose kids study there.'"
+              icon="🔎"
+            />
+          } @else {
+            <div class="grid">
+              @for(p of results(); track p.id){
+                <app-parent-card
+                  [parent]="p"
+                  [requestState]="sentTo().has(p.id) ? 'sent' : 'ready'"
+                  (request)="sendRequest($event)"
+                />
+              }
+            </div>
+          }
+        }
+      </div>
+    </div>
+  </div>
+</section>
+

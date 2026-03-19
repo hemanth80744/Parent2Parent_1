@@ -1,0 +1,28 @@
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" routerLink="/">
+      <span class="brand-mark">Parent</span><span class="brand-accent">2</span><span class="brand-mark">Parent</span>
+    </a>
+
+    <nav class="links" aria-label="Primary">
+      <a class="link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+      <a class="link" routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+      <a class="link" routerLink="/requests" routerLinkActive="active">Requests</a>
+      <a class="link" routerLink="/chat" routerLinkActive="active">Chat</a>
+    </nav>
+
+    <div class="actions">
+      @if(!isLoggedIn()){
+        <a class="btn btn-ghost btn-sm" routerLink="/login">Login</a>
+        <a class="btn btn-primary btn-sm" routerLink="/register">Register</a>
+      } @else {
+        <div class="user">
+          <span class="user-dot" aria-hidden="true"></span>
+          <span class="user-name">{{ user()?.name }}</span>
+        </div>
+        <button class="btn btn-ghost btn-sm" (click)="logout()">Logout</button>
+      }
+    </div>
+  </div>
+</header>
+

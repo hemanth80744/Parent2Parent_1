@@ -1,0 +1,33 @@
+<section class="dash">
+  <div class="container dash-grid">
+    <app-sidebar title="Chat" />
+
+    <div class="main">
+      <div class="head card">
+        <div class="head-top">
+          <div>
+            <div class="title">Connect & Chat</div>
+            <div class="sub">WhatsApp-style messaging after requests are accepted.</div>
+          </div>
+          <div class="pill">Demo</div>
+        </div>
+      </div>
+
+      <div class="chat-grid">
+        <app-chat-users [users]="users()" [selectedId]="selectedId()" (pick)="pick($event)" />
+
+        @if(!selectedUser()){
+          <app-empty-state title="Pick a parent" subtitle="Select a connected user to start chatting." icon="💬" />
+        } @else {
+          <app-chat-box
+            [meId]="meId()"
+            [otherName]="selectedUser()!.name"
+            [messages]="messages()"
+            (send)="send($event)"
+          />
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
