@@ -6,12 +6,6 @@ This application’s main purpose is to help parents enquire about school detail
 
 Here, users can get genuine and real information about the school from experienced parents.
 
-## 🚀 Live Links
-
-- **Frontend (UI)**: [https://parent2parent-ui.azurewebsites.net](https://parent2parent-ui.azurewebsites.net)
-- **Backend (API)**: [https://parent2parent-api.azurewebsites.net](https://parent2parent-api.azurewebsites.net)
-- **API Documentation**: [https://parent2parent-api.azurewebsites.net/swagger](https://parent2parent-api.azurewebsites.net/swagger)
-
 ## Website Video Demo
 
 [Watch Video Demo](https://drive.google.com/file/d/16zzkJ0azTcdsg1HJRnMyI8C4U70DEKFm/view?usp=sharing)
@@ -23,11 +17,6 @@ Here, users can get genuine and real information about the school from experienc
 - **Database**: Azure SQL Database.
 
 ## 🔧 Configuration (Azure)
-
-### Backend (Azure App Service)
-Required Configuration -> Connection Strings:
-- `Parent2ParentDb`: Your Azure SQL connection string.
-- `AllowedOrigins`: `["https://parent2parent-ui.azurewebsites.net"]`
 
 ### Frontend (Azure App Service or Static Web App)
 - **Root Directory**: `parent2parent-ui`
