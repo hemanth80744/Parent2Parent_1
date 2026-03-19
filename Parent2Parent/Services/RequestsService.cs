@@ -58,7 +58,7 @@ public sealed class RequestsService : IRequestsService
     public async Task<ServiceResult<IReadOnlyList<ConnectionRequestDto>>> ViewSentRequestsAsync(int userId, CancellationToken ct)
     {
         // Now returns an empty list to avoid 404s, while we transition back to a single call.
-        return ServiceResult<IReadOnlyList<ConnectionRequestDto>>.Ok(new List<ConnectionRequestDto>(), "OK");
+        return await Task.FromResult(ServiceResult<IReadOnlyList<ConnectionRequestDto>>.Ok(new List<ConnectionRequestDto>(), "OK"));
     }
 
     public async Task<ServiceResult<object>> AcceptRequestAsync(int requestId, CancellationToken ct)
