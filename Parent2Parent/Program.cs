@@ -69,4 +69,7 @@ if (app.Environment.IsDevelopment())
 
 app.MapControllers();
 
+// Health check endpoint for Render to verify the app is live
+app.MapGet("/", () => "Parent2Parent API is live and running!");
+
 app.Run();
