@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://YOUR_RENDER_BACKEND_URL.onrender.com'
+  apiUrl: 'https://parent2parent-api.onrender.com' // Replace this with your actual Render URL
 };
