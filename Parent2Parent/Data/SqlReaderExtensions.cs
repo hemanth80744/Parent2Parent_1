@@ -42,4 +42,3 @@ internal static class SqlReaderExtensions
         return reader.IsDBNull(ordinal) ? null : reader.GetDateTime(ordinal);
     }
 }
-

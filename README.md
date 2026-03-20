@@ -21,7 +21,7 @@ Here, users can get genuine and real information about the school from experienc
 ### Backend (SmarterASP.NET)
 - **Hosting**: .NET 8.0 Runtime
 - **Database**: MSSQL Server
-- **Live API Link**: [https://hemanth80744-001-site1.anytempurl.com](https://hemanth80744-001-site1.anytempurl.com)
+- **Live API Link**: [http://hemanth80744-001-site1.anytempurl.com](http://hemanth80744-001-site1.anytempurl.com)
 - **Connection String**: Configured in `appsettings.json`.
 
 ### Frontend (Vercel)

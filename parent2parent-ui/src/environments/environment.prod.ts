@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://hemanth80744-001-site1.anytempurl.com'
+  apiUrl: 'http://hemanth80744-001-site1.anytempurl.com/p2p'
 };
