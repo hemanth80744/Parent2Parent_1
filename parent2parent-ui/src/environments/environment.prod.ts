@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://parent2parent-api-1090078290829.us-central1.run.app' // Updated for Google Cloud Run
+  apiUrl: 'https://parent2parent-api-1090078290829.us-central1.run.app'
 };
