@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:5035'
+  apiUrl: 'https://parent2parent-api-1090078290829.us-central1.run.app'
 };
