@@ -18,15 +18,16 @@ Here, users can get genuine and real information about the school from experienc
 
 ## 🔧 Configuration
 
-### Backend (SmarterASP.NET)
-- **Hosting**: .NET 8.0 Runtime
-- **Database**: MSSQL Server
-- **Live API Link**: [http://hemanth80744-001-site1.anytempurl.com](http://hemanth80744-001-site1.anytempurl.com)
-- **Connection String**: Configured in `appsettings.json`.
+### Backend (Google Cloud Platform)
+- **Hosting**: Google Cloud Run (Dockerized ASP.NET Core 8.0)
+- **Database**: Google Cloud SQL for SQL Server
+- **Live API Link**: [https://parent2parent-api-1090078290829.us-central1.run.app](https://parent2parent-api-1090078290829.us-central1.run.app)
+- **Environment Variables**: `ConnectionStrings__Parent2ParentDb` configured in Cloud Run.
 
 ### Frontend (Vercel)
 - **Root Directory**: `parent2parent-ui`
 - **Output Directory**: `dist/browser`
+- **API URL**: Configured in `environment.prod.ts` pointing to Google Cloud Run.
 
 ## 👨‍💻 Local Development
 
