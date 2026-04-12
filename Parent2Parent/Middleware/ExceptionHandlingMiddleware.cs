@@ -42,7 +42,7 @@ public sealed class ExceptionHandlingMiddleware
     {
         if (context.Response.HasStarted) return;
 
-        context.Response.Clear();
+        // Do not call Clear() as it might remove CORS headers
         context.Response.StatusCode = (int)status;
         context.Response.ContentType = "application/problem+json";
 
