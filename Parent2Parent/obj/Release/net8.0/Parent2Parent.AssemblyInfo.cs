@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Parent2Parent")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+78ab4af69bf5293e05ce217194d0f882b8da99d0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+419279f0a0a9230a4e2d07d398644c55f5513083")]
 [assembly: System.Reflection.AssemblyProductAttribute("Parent2Parent")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Parent2Parent")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,0 +1,29 @@
+[33mcommit ac1dc9a083ba2488b39a1bd62e4bd0c72f68027a[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: hemanth80744 <mutyalahemanth80744@gmail.com>
+Date:   Sun Apr 12 20:27:06 2026 +0530
+
+    fix: simplify CORS and ensure public IP for database
+
+[33mcommit d252ac590f352f0941dea46812d696df854c31b4[m
+Author: hemanth80744 <mutyalahemanth80744@gmail.com>
+Date:   Sat Mar 21 02:40:43 2026 +0530
+
+    docs: update backend configuration to Google Cloud Platform in README
+
+[33mcommit 7b72ffa986969fe3b4e2bee5de6d79b9a6742d72[m
+Author: hemanth80744 <mutyalahemanth80744@gmail.com>
+Date:   Sat Mar 21 02:03:20 2026 +0530
+
+    chore: update database name to Parent2Parent_DB1 and server to localhost for Cloud Run proxy
+
+[33mcommit fed500aeef6e8ccf3514c5e93e19d47653881ab7[m[33m ([m[1;31morigin/master[m[33m, [m[1;32mmaster[m[33m)[m
+Author: hemanth80744 <mutyalahemanth80744@gmail.com>
+Date:   Sat Mar 21 01:30:29 2026 +0530
+
+    fix: restore gcp api url in environment.prod.ts
+
+[33mcommit 419bc82339b90a0888dd087411d678024337c6a7[m
+Author: hemanth80744 <mutyalahemanth80744@gmail.com>
+Date:   Sat Mar 21 01:16:03 2026 +0530
+
+    force: update api url to gcp
