@@ -50,12 +50,13 @@ builder.Services.AddScoped<Parent2Parent.Services.IMessagesService, Parent2Paren
 
 var app = builder.Build();
 
-// 1. Move CORS to the very top of the pipeline
-// 2. Use a single policy for both Dev and Prod for now to guarantee connectivity
-app.UseCors(p => p
-    .AllowAnyOrigin()
-    .AllowAnyHeader()
-    .AllowAnyMethod());
+// Enable CORS at the very beginning of the request pipeline
+app.UseCors(policy => 
+{
+    policy.AllowAnyOrigin()
+          .AllowAnyHeader()
+          .AllowAnyMethod();
+});
 
 app.UseMiddleware<Parent2Parent.Middleware.ExceptionHandlingMiddleware>();
 
